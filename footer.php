@@ -19,6 +19,7 @@
 
 			<div id="footer-text" class="site-info">
 				<?php do_action( 'zeedynamic_footer_text' ); ?>
+				<span class="footer-disclaimer">Disclaimer: the opinions and views expressed at or through this blog are the opinions of the designated authors and do not reflect the opinions or views of the university.</span>
 			</div><!-- .site-info -->
 			
 			<?php do_action( 'zeedynamic_footer_menu' ); ?>

@@ -46,7 +46,33 @@ function zeedynamic_site_title() {
 	<?php else : ?>
 		
 		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+	<?php endif; 
+
+}
+endif;
+
+if ( ! function_exists( 'zeedynamic_site_description' ) ):
+/**
+ * Displays the site description in the header area
+ */
+function zeedynamic_site_description() {
 	
+	// Get Theme Options from Database
+	$theme_options = zeedynamic_theme_options();
+	
+	// Return early if site title is deactivated
+	if( false == $theme_options['site_description'] ) {
+		return;
+	}
+
+	if ( ( is_home() and $theme_options['blog_title'] == '' ) or is_page_template( 'template-magazine.php' )  ) : ?>
+		
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	
+	<?php else : ?>
+		
+		<p class="site-description"><?php echo bloginfo('description'); ?></p>
+
 	<?php endif; 
 
 }

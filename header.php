@@ -28,14 +28,31 @@
 		<div id="header-top" class="header-bar-wrap"><?php do_action( 'zeedynamic_header_bar' ); ?></div>
 		
 		<header id="masthead" class="site-header clearfix" role="banner">
-			
+
+			<?php if ( has_nav_menu( 'top-navigation' ) ) : ?>
+			<div id="top-navigation-wrap">
+				<?php 
+						// Display Top navigation
+						wp_nav_menu( array(
+							'theme_location' => 'top-navigation', 
+							'container' => false,
+							'menu_class' => 'top-navigation-menu',  
+							'echo' => true,
+							'fallback_cb' => '')
+						);
+					?>
+				<div class="clear"></div> 
+			</div><!-- #top-navigation-wrap -->
+			<?php endif; ?>
+
 			<div class="header-main container clearfix">
 						
 				<div id="logo" class="site-branding clearfix">
 				
 					<?php zeedynamic_site_logo(); ?>
 					<?php zeedynamic_site_title(); ?>
-				
+					<?php zeedynamic_site_description(); ?>
+
 				</div><!-- .site-branding -->
 				
 				<div class="header-widgets clearfix">

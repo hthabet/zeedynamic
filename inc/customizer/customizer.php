@@ -57,6 +57,23 @@ function zeedynamic_customize_register_options( $wp_customize ) {
 		'priority' => 10
 		)
 	);
+
+	// Add Display Site description Setting
+	$wp_customize->add_setting( 'zeedynamic_theme_options[site_description]', array(
+        'default'           => true,
+		'type'           	=> 'option',
+        'transport'         => 'refresh',
+        'sanitize_callback' => 'zeedynamic_sanitize_checkbox'
+		)
+	);
+	$wp_customize->add_control( 'zeedynamic_theme_options[site_description]', array(
+        'label'    => esc_html__( 'Display Tagline', 'zeedynamic' ),
+        'section'  => 'title_tagline',
+        'settings' => 'zeedynamic_theme_options[site_description]',
+        'type'     => 'checkbox',
+		'priority' => 10
+		)
+	);
 	
 	// Add Header Image Link
 	$wp_customize->add_setting( 'zeedynamic_theme_options[custom_header_link]', array(

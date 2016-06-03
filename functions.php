@@ -40,6 +40,8 @@ function zeedynamic_setup() {
 
 	// Register Navigation Menu
 	register_nav_menu( 'primary', esc_html__( 'Main Navigation', 'zeedynamic' ) );
+	// Register Top Navigation
+	register_nav_menu( 'top-navigation', esc_html__('Top Navigation', 'zeedynamic') );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 	add_theme_support( 'html5', array(
