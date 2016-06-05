@@ -2347,11 +2347,15 @@ object {
     box-shadow: 0px 11px 25px 0px rgba(0,0,0,0.75);
 }
 
+.site-branding {
+	width: 100%;
+}
+
 .site-description {
 	/*display:inline-block;*/
 	font-size: 15px;
 	font-size: 1rem;
-	max-width: 700px;
+	max-width: 580px;
 	margin: 0 0.6em;
 }
 
